@@ -1,0 +1,274 @@
+import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');  
+:root{
+    font-family: 'EB Garamond', serif;
+}
+.text{
+    background-color: grey;
+}
+
+body{
+    margin: 0%;
+}
+.resour{
+    background-color: white;
+    margin-left: -30%;
+    margin-right: 30%;
+}
+
+#browsemenu{
+    font-size: 200%;
+    text-align: center;
+    background-color: #eee;
+    width: 80%;
+    
+}
+.colovnav{
+    background-color: #dfdfdf;
+    border-style: solid blue;
+    padding:-10%;
+}
+header{display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-column: 1/3;
+    text-align: center;
+    background-color: #eee;
+}
+#logo{
+    display: flex;  
+    justify-content:baseline;
+    width: 70%;
+    height:60%;
+}
+#logo img{
+    height:120%;
+    width: 70%;
+}
+.colonav a{
+    background-color: #dfdfdf;
+    border-style: solid;
+}
+nav a:hover{
+    color: rgb(95, 95, 242);
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    justify-content: center;
+    gap:5%;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 10px;
+}
+#title{
+    grid-column: 2/4;
+    padding-left: 29%;
+    margin-top: 0%;   
+    grid:flex;
+    text-align:center;
+    padding-right: 10%;
+    /* font-size:450%; */
+    font-family: 'EB Garamond', serif;
+    
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110%;
+    text-align: center;
+}
+
+#container{
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+    /* grid-template-rows: 190px 2fr fr ; */
+    gap:1%;
+}
+
+img{
+    grid-column: 2/3;
+    grid-row:2/3;
+    width: 90%; 
+    max-height: 400px;
+    height: auto;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 ; /* place the sidebar in the first column */
+    grid-row:2/4;   /* place sidebar from row 2 to 4 */
+    background-color: #eee;
+    padding: 6rem;
+}
+
+fieldset{
+    background-color: #eee;
+    
+}
+
+footer{
+    grid-column:1/3;
+    background-color: #eee;
+}
+
+section{
+    grid-row:3/4;
+    grid-column: 2/3;
+    display:flex;
+    justify-content: center;
+    background-color:rgb(158, 203, 255) ;
+    width: 70%;
+    margin-left: 15%;
+}
+#hamburgermenu{
+    display: none;
+    visibility: none;
+}
+#menu__toggle {
+    opacity: 0;
+    display:none;
+}
+#current {
+    color: rgb(0, 255, 170);
+}
+a[href^="https"] {
+    color: rgb(72, 11, 11);
+}
+html{
+    gap:2%;
+}
+
+/* small screen */
+@media screen and (max-width:590px){
+    section{
+        margin-right:20%;
+    }
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #eee;
+    }
+
+    footer {
+        /* position:relative; */
+        top: 100%;
+        width: 100%;
+    }
+    
+    #hamburgermenu{
+        display:unset;
+    }
+    /* for hamburger menu spining icong when clicked */
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+    }
+    
+    /* for hamburger menu spining icong when clicked */
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    
+    /* for hamburger menu spining icong when clicked */
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    /* for the content to show on the right on the hamburger menu
+    other wise no content to click */
+    #menu__toggle:checked ~ .menu__box {
+        right: 0;
+        left: unset !important;
+    }
+    /* hamburger menu icon position and style */
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        right:3px;
+        width: 20px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color:black;
+        transition-duration: .25s;
+    }
+    /* top line */
+    .menu__btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    /* bottom line */
+    .menu__btn > span::after {
+        content: '';
+        top: 8px;
+    }
+    .menu__box {
+        display: block;
+        position: fixed;
+        font-size: calc(9px + 1vw);
+        top: 5%;
+        left:120%;
+        width: 33%;
+        height: 35%;
+        list-style: none;
+        background-color: navy;
+        border-color: black;
+        border-style: ridge;
+        z-index: 1;
+        color: black;
+        transform: skewX(5deg);
+
+        
+    }
+    aside{
+        display:none;
+    }
+    #logo img{
+        width: 130%;
+        height:160%;
+    }
+    #title{
+font-size: 270%;    }
+    
+}
+
+
+/* medium size screen */
+@media screen and (min-width: 591px) and (max-width:790px) {
+    
+    
+}
+/* large size screen  */
+@media screen and (min-width:791px) {
+    #container{
+        background-color: rgb(158, 203, 255);
+        gap:1%;
+    }
+    html{
+        max-width: 1000px;
+        margin-right:auto;
+        margin-left: auto;
+    }
+    
+    
+    /* #logo img{
+        height: 70%;
+    } */
+    
+    
+}
